@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GTR IT - AI agents and workflow automation consultancy for SMEs. Transform your business with intelligent automation solutions.">
+    <meta name="theme-color" content="#1f2937">
+    <title>GTR IT - AI Agents & Workflow Automation for SMEs</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #0f766e;
+            --color-primary-light: #14b8a6;
+            --color-primary-dark: #0d5a52;
+            --color-secondary: #1e293b;
+            --color-accent: #f59e0b;
+            --color-accent-light: #fcd34d;
+            --color-background: #f9fafb;
+            --color-text-dark: #1f2937;
+            --color-text-light: #6b7280;
+            --color-border: #e5e7eb;
+            --color-white: #ffffff;
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            --font-mono: 'Monaco', 'Courier New', monospace;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            
+            --transition: all 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+            color: var(--color-text-light);
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--color-primary-light);
+        }
+
+        /* Container & Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--color-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-md) 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-cta {
+            display: none;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-xs);
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-text-dark);
+            border-radius: 1px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+        }
+
+        /* Button Styles */
+        .btn {
+            padding: var(--spacing-md) var(--spacing-xl);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-text-dark);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-white);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid var(--color-accent);
+            padding: calc(var(--spacing-md) - 2px) calc(var(--spacing-xl) - 2px);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-accent);
+            color: var(--color-text-dark);
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--color-background);
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        /* Problem Section */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .problem-card {
+            background: var(--color-white);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .problem-card h3 {
+            color: var(--color-text-dark);
+            margin-top: 0;
+        }
+
+        .problem-card p {
+            color: var(--color-text-light);
+            margin-bottom: 0;
+        }
+
+        /* Solution Section */
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+            align-items: flex-start;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .solution-text {
+            max-width: 100%;
+        }
+
+        .solution-text h3 {
+            color: var(--color-primary);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .feature-card {
+            background: var(--color-white);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        .feature-card h3 {
+            color: var(--color-primary);
+            margin: var(--spacing-md) 0;
+        }
+
+        .feature-card p {
+            margin: 0;
+        }
+
+        /* Why Us Section */
+        .why-us-list {
+            display: grid;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .why-us-item {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: flex-start;
+        }
+
+        .why-us-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .why-us-text h3 {
+            margin-top: 0;
+            color: var(--color-text-dark);
+        }
+
+        /* What We Do Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .service-card {
+            background: var(--color-white);
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            border-top: 3px solid var(--color-primary);
+        }
+
+        .service-card h3 {
+            color: var(--color-primary);
+            margin: var(--spacing-md) 0;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin: var(--spacing-md) 0;
+        }
+
+        .service-card li {
+            padding: var(--spacing-xs) 0;
+            color: var(--color-text-light);
+            padding-left: var(--spacing-lg);
+            position: relative;
+        }
+
+        .service-card li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* Case Study / Real Example */
+        .case-study {
+            background: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .case-study-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-xl);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .case-study-stat {
+            color: var(--color-white);
+        }
+
+        .case-study-stat .number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .case-study-stat .label {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+
+        .case-study-body h3 {
+            color: var(--color-primary);
+            margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+        }
+
+        .timeline-phase {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 0.95rem;
+        }
+
+        .timeline-desc {
+            color: var(--color-text-light);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--color-white);
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-secondary);
+            color: var(--color-white);
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            text-align: center;
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content h3 {
+            color: var(--color-accent);
+            margin: 0 0 var(--spacing-md) 0;
+            font-size: 1.2rem;
+        }
+
+        .footer-content p {
+            margin: var(--spacing-sm) 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-content a {
+            color: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .footer-content a:hover {
+            color: var(--color-accent-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            padding-top: var(--spacing-lg);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Focus styles for keyboard navigation */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Skip to main content link */
+        .skip-to-main {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-accent);
+            color: var(--color-text-dark);
+            padding: var(--spacing-sm);
+            z-index: 100;
+        }
+
+        .skip-to-main:focus {
+            top: 0;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+
+            .nav-cta {
+                display: block;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            section {
+                padding: var(--spacing-2xl) 0;
+            }
+
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .timeline-item {
+                grid-template-columns: 150px 1fr;
+            }
+
+            .solution-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            :root {
+                --spacing-2xl: 5rem;
+            }
+
+            section {
+                padding: 6rem 0;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Performance: reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: #111827;
+                --color-text-dark: #f3f4f6;
+                --color-text-light: #d1d5db;
+                --color-border: #374151;
+            }
+
+            body {
+                background: #0f172a;
+            }
+
+            .problem-card,
+            .feature-card,
+            .service-card,
+            .case-study {
+                background: #1f2937;
+                color: #f3f4f6;
+            }
+
+            .problem-card p,
+            .feature-card p,
+            .service-card li,
+            .timeline-desc {
+                color: #d1d5db;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">GTR IT</div>
+                <ul class="nav-links">
+                    <li><a href="#problem">Problem</a></li>
+                    <li><a href="#solution">Solution</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#what-we-do">What We Do</a></li>
+                    <li><a href="#case-study">Case Study</a></li>
+                </ul>
+                <a href="mailto:steve@gtr-it.co.uk" class="btn btn-primary nav-cta">Get Started</a>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Stop drowning in manual work. Start automating it.</h1>
+                <p>AI agents and workflow automation solve real problems. Faster. Cheaper. No tech degree required.</p>
+                <div class="hero-cta">
+                    <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary">Book a discovery call</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem">
+            <div class="container">
+                <h2>The problem isn't complicated. It's everywhere.</h2>
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <h3>You're spending hours on tasks that don't need a human.</h3>
+                        <p>Your team enters the same data twice. Processes that should take minutes take days. You're paying people to do work a computer should do.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Your people are exhausted.</h3>
+                        <p>They're doing repetitive work instead of the work only they can do. Good staff leave because they're bored. You hire to replace them. The cycle repeats.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>You're losing money on inefficiency.</h3>
+                        <p>Mistakes happen because people are tired. Work slips through the cracks. You don't have visibility into what's actually happening in your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="solution">
+            <div class="container">
+                <h2>What if it didn't have to be this hard?</h2>
+                <div class="solution-content">
+                    <div class="solution-text">
+                        <p style="font-size: 1.1rem; color: var(--color-text-dark);">We build AI agents that do the work for you. Not someday. Now. An AI agent is software that watches your processes, understands what needs doing, and does it. It handles data entry. It chases up approvals. It updates your systems. It works 24/7.</p>
+                        
+                        <h3 style="margin-top: var(--spacing-xl); color: var(--color-primary);">Real example</h3>
+                        <p>A customer order arrives in your email. Normally your team manually enters it, checks inventory, sends a quote, waits for approval. An agent does all of that automatically — within minutes, no human required. That's not replacing people. That's removing the busy work so your people can focus on keeping customers happy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us">
+            <div class="container">
+                <h2>Why work with GTR IT?</h2>
+                <div class="why-us-list">
+                    <div class="why-us-item">
+                        <div class="why-us-icon">1</div>
+                        <div class="why-us-text">
+                            <h3>We understand your business first.</h3>
+                            <p>We don't sell software off the shelf. We come in, watch how you work, understand what's costing you time and money, then build something that fits.</p>
+                        </div>
+                    </div>
+                    <div class="why-us-item">
+                        <div class="why-us-icon">2</div>
+                        <div class="why-us-text">
+                            <h3>We keep it simple.</h3>
+                            <p>No vendor lock-in. No platform you can't understand. We build agents that work with what you already use. You can see how they work. You can change them.</p>
+                        </div>
+                    </div>
+                    <div class="why-us-item">
+                        <div class="why-us-icon">3</div>
+                        <div class="why-us-text">
+                            <h3>We focus on what matters.</h3>
+                            <p>We don't automate for the sake of automating. We target the work that costs you the most time or money. Quick win first. Then we move to the next problem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section id="what-we-do">
+            <div class="container">
+                <h2>Three ways we can help.</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Process automation.</h3>
+                        <p>You have workflows that are repetitive and rule-based. We build agents that handle these end-to-end. Your team focuses on exceptions and relationships.</p>
+                        <ul>
+                            <li>Data entry and processing</li>
+                            <li>Approvals and notifications</li>
+                            <li>System-to-system integration</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Data integration.</h3>
+                        <p>Your data lives in different places. Pulling it together manually burns time. We build agents that pull data together, clean it, and make it available where your people need it.</p>
+                        <ul>
+                            <li>Automated reporting</li>
+                            <li>Cross-system data sync</li>
+                            <li>Real-time dashboards</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3>Customer-facing automation.</h3>
+                        <p>Customers ask questions. You have the answers somewhere. We build agents that answer them automatically. Your support team handles the hard stuff. The agent handles the rest.</p>
+                        <ul>
+                            <li>Instant quote responses</li>
+                            <li>FAQ automation</li>
+                            <li>Follow-up sequences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Section -->
+        <section id="case-study">
+            <div class="container">
+                <h2>What this looks like in practice.</h2>
+                <div class="case-study">
+                    <div class="case-study-stats">
+                        <div class="case-study-stat">
+                            <span class="number">20 hrs</span>
+                            <span class="label">/week saved</span>
+                        </div>
+                        <div class="case-study-stat">
+                            <span class="number">5 min</span>
+                            <span class="label">per quote (was 2 hrs)</span>
+                        </div>
+                        <div class="case-study-stat">
+                            <span class="number">Same-day</span>
+                            <span class="label">response (was 2-3 days)</span>
+                        </div>
+                    </div>
+
+                    <div class="case-study-body">
+                        <h3>The Scenario</h3>
+                        <p>You run a service business. Customers request quotes by email. Right now someone manually reviews each request, checks availability, pulls together a quote, and sends it back. It takes 2 hours per quote. You get 10 a week. That's 20 hours of admin.</p>
+                        
+                        <h3>What We Build</h3>
+                        <p>An agent watches your inbox. It extracts customer details. Checks your calendar. Pulls the right pricing. Sends a customised quote within minutes. When the customer replies, it answers common questions automatically and flags complex ones to your team.</p>
+
+                        <h3>The Result</h3>
+                        <p>2-hour manual job becomes 5 minutes of agent work. Your team spends their time closing deals, not processing them.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to see what's possible?</h2>
+                <p>The biggest barrier isn't technology. It's talking to someone who understands your business and can explain what's realistic for you. Book a free 20-minute discovery call with Steve. Come with a process that wastes your time. Leave with a clear picture of what you could automate and what it's worth to you. No pressure. No pitch. Just a conversation about your business.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary">Book a discovery call</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>GTR IT</h3>
+                <p>AI agents and workflow automation for small and medium businesses.</p>
+                <p><a href="mailto:steve@gtr-it.co.uk">steve@gtr-it.co.uk</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright GTR IT 2026. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks) navLinks.style.display = 'none';
+            });
+        });
+
+        // Simple performance tracking
+        if (window.performance && window.performance.timing) {
+            window.addEventListener('load', () => {
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`Page load time: ${loadTime}ms`);
+            });
+        }
+    </script>
+</body>
+</html>

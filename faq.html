@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GTR IT FAQ — Frequently asked questions about AI agents, workflow automation, and our services for SMEs.">
+    <meta name="theme-color" content="#202124">
+    <meta name="color-scheme" content="light">
+    <title>FAQ | GTR IT</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #4285F4;
+            --color-secondary: #EA4335;
+            --color-tertiary: #FBBC05;
+            --color-charcoal: #202124;
+            --color-slate: #3C4043;
+            --color-cloud: #F8F9FA;
+            --color-background: #ffffff;
+            --color-text-dark: #202124;
+            --color-text-light: #3C4043;
+            --color-border: #e5e7eb;
+            --color-white: #ffffff;
+            
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            
+            --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            --font-mono: 'Monaco', 'Courier New', monospace;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            
+            --transition: all 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-charcoal);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1rem;
+            color: var(--color-text-light);
+            font-weight: 400;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: #1967d2;
+        }
+
+        /* Container & Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--color-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--spacing-md) 0;
+        }
+
+        .logo {
+            font-size: 4.2rem;
+            font-weight: 800;
+            color: var(--color-charcoal);
+            letter-spacing: -0.03em;
+            display: flex;
+            gap: 0;
+            line-height: 1;
+        }
+
+        .footer-logo {
+            font-size: 3.3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            display: inline-flex;
+            gap: 0;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo .g { color: var(--color-primary); font-weight: 800; }
+        .footer-logo .t { color: var(--color-secondary); font-weight: 800; }
+        .footer-logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .footer-logo .it { color: #ffffff; font-weight: 300; }
+
+        .footer-tagline {
+            display: block;
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.02em;
+            margin-top: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo .g { color: var(--color-primary); font-weight: 800; }
+        .logo .t { color: var(--color-secondary); font-weight: 800; }
+        .logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .logo .it { color: var(--color-charcoal); font-weight: 300; }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: var(--spacing-lg);
+            align-items: center;
+            padding: var(--spacing-xl) 0;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links.active {
+            display: flex !important;
+        }
+
+        .nav-cta {
+            display: block;
+        }
+
+        .nav-cta.btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-xs);
+        }
+
+        .menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-text-dark);
+            border-radius: 1px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: var(--color-white);
+            margin-bottom: var(--spacing-lg);
+            font-weight: 800;
+        }
+
+        .hero p {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        /* Button Styles */
+        .btn {
+            padding: var(--spacing-md) var(--spacing-xl);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: #1967d2;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        a.btn-primary, a.btn-primary:hover, a.btn-primary:visited {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
+        /* Main Content Section */
+        main {
+            padding: var(--spacing-2xl) 0;
+            background: var(--color-white);
+        }
+
+        main h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--color-charcoal);
+        }
+
+        /* FAQ Container */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Accordion Styles */
+        .faq-item {
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            background: var(--color-white);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: var(--spacing-lg);
+            background: var(--color-cloud);
+            border: none;
+            text-align: left;
+            font-family: var(--font-family);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: #e8eaed;
+        }
+
+        .faq-question:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: -2px;
+        }
+
+        .faq-question[aria-expanded="true"] {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .faq-question[aria-expanded="true"]::after {
+            transform: rotate(180deg);
+        }
+
+        .faq-question::after {
+            content: '▼';
+            font-size: 0.85rem;
+            transition: transform 0.3s ease-in-out;
+            margin-left: var(--spacing-md);
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            background: var(--color-white);
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: var(--spacing-lg);
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        .faq-answer p {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+            margin-top: var(--spacing-2xl);
+        }
+
+        .cta h2 {
+            color: var(--color-white);
+            font-weight: 600;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-xl);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-xl) 0 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            text-align: center;
+            padding: var(--spacing-xl);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content h3 {
+            color: var(--color-primary);
+            margin: 0 0 var(--spacing-md) 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .footer-content p {
+            margin: var(--spacing-sm) 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+        }
+
+        .footer-content a {
+            color: var(--color-primary);
+            transition: var(--transition);
+        }
+
+        .footer-content a:hover {
+            color: rgba(66, 133, 244, 0.8);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            padding: var(--spacing-lg);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+
+        /* Three-colour footer bar */
+        .footer-bar {
+            display: flex;
+            height: 8px;
+            margin-top: 0;
+        }
+
+        .footer-bar .bar-blue {
+            flex: 1;
+            background: var(--color-primary);
+        }
+
+        .footer-bar .bar-red {
+            flex: 1;
+            background: var(--color-secondary);
+        }
+
+        .footer-bar .bar-yellow {
+            flex: 1;
+            background: var(--color-tertiary);
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Skip to main content link */
+        .skip-to-main {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-accent);
+            color: var(--color-text-dark);
+            padding: var(--spacing-sm);
+            z-index: 100;
+        }
+
+        .skip-to-main:focus {
+            top: 0;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+
+            .nav-cta {
+                display: block;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (min-width: 1440px) {
+            :root {
+                --spacing-2xl: 5rem;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Performance: reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Dark mode support */
+        /* Dark mode intentionally disabled - brand page always displays in light mode */
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html#problem">Problem</a></li>
+                    <li><a href="index.html#solution">Solution</a></li>
+                    <li><a href="index.html#why-us">Why Us</a></li>
+                    <li><a href="index.html#what-we-do">What We Do</a></li>
+                    <li><a href="index.html#case-study">Case Study</a></li>
+                </ul>
+                <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary nav-cta">Get Started</a>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Frequently Asked Questions</h1>
+                <p>Everything you need to know about AI agents, automation, and how we can help your business.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section>
+            <div class="faq-container">
+                <h2>Your Questions, Answered</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What exactly do you automate? And will it actually apply to us?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>We automate the repetitive, manual tasks that eat up your team's day—think data entry, spreadsheet updates, report generation, invoice processing, and email workflows. If your team spends time on tasks that follow the same pattern over and over, we can likely build something to handle it. The beauty is, what we build is custom to you, not a generic tool you have to force-fit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How much is this going to cost?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>There's no one-size-fits-all price tag, because every business is different. What we focus on is value: if a workflow costs you £10k a year in salaries, and we can automate it for £3k upfront, that's a clear win. We'll talk through your specific situation, scope the work honestly, and show you the ROI before we commit to anything. No surprises, no hidden costs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How long does it actually take to build something?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>A simple integration or data pipeline might take 2–4 weeks; something more complex could be 8–12 weeks. We'll give you a realistic timeline upfront and break it into milestones so you can see progress. Plus, we iterate with you along the way—if something isn't quite right, we fix it before it goes live, not after.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Will this work with the systems we already use?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Almost certainly, yes. We integrate with everything from Salesforce to QuickBooks, Slack to Excel, APIs to old-school databases. If your system has a way to send or receive data, we can plug into it. If we hit something unusual, we'll figure out a workaround together rather than telling you to rip and replace.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What if we're not totally sure what to automate?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>That's completely normal—you're not alone. We start with a discovery conversation to map out your workflows, identify the real time-sinks, and spot quick wins. Sometimes the best automation isn't obvious until we dig in. Consider the first chat a free diagnosis: no obligation, and you'll leave with a clear picture of what's possible.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Are we small enough for you to work with?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Size doesn't matter to us. Small teams often benefit most from automation because every hour your people save goes straight to growth. Whether you're three people or three hundred, if the work's repetitive enough to automate, it's worth doing. In fact, we often find that smaller teams are faster to work with—less bureaucracy, quicker decisions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What about data security and compliance?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Data security isn't an add-on—it's built into everything we do. We handle SOC 2, GDPR, data encryption, and audit trails as standard. If you have specific compliance needs (healthcare, finance, etc.), we'll design the system around those requirements from day one. You should always know exactly where your data lives and who has access to it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">What happens after you build it? Are we on our own?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Not a chance. We provide post-launch support so you're not fumbling around if something breaks or needs tweaking. We also document everything clearly so your team can understand what's running under the hood. And if you spot a bottleneck down the line, we're there to refine it—automation isn't a one-time thing; it evolves with your business.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">How do we actually get started?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Book a quick discovery call with us—no forms, no sales pitch, just a conversation about what's slowing you down. We'll listen, ask smart questions, and sketch out what's possible. If it makes sense to move forward, we'll outline a plan and timeline. If it doesn't fit right now, we'll tell you that too.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">Can you really deliver on "less grind, more growth"?</button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>That's the promise, and it's why we do this. When your team stops wrestling with spreadsheets and manual processes, they can focus on the work that actually moves the needle—selling, creating, strategising. We've seen teams go from drowning in admin to having time for real business growth. That's the whole point.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Still have questions?</h2>
+                <p>Book a free 20-minute discovery call. We'll talk through your specific situation and show you what's possible.</p>
+                <div style="margin-top: var(--spacing-lg);">
+                    <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary">Get in touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
+                <span class="footer-tagline">Less grind. More growth.</span>
+                <p>AI agents and workflow automation for small and medium businesses.</p>
+                <p><a href="tel:+441234567890">+44 (0) 123 456 7890</a> or <a href="mailto:steve@gtr-it.co.uk">email</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright GTR IT 2026. All rights reserved. | <a href="faq.html">FAQ</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks) navLinks.classList.remove('active');
+            });
+        });
+
+        // Accordion Functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const faqAnswer = faqItem.querySelector('.faq-answer');
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                // Close all other FAQs
+                faqQuestions.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.setAttribute('aria-expanded', 'false');
+                        otherButton.parentElement.querySelector('.faq-answer').classList.remove('open');
+                    }
+                });
+
+                // Toggle current FAQ
+                button.setAttribute('aria-expanded', !isExpanded);
+                faqAnswer.classList.toggle('open');
+            });
+
+            // Allow keyboard navigation
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    button.click();
+                }
+            });
+        });
+
+        // Simple performance tracking
+        if (window.performance && window.performance.timing) {
+            window.addEventListener('load', () => {
+                const perfData = window.performance.timing;
+                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
+                console.log(`Page load time: ${loadTime}ms`);
+            });
+        }
+    </script>
+</body>
+</html>

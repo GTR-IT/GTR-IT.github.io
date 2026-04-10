@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GTR IT - AI agents and workflow automation consultancy for SMEs. Transform your business with intelligent automation solutions.">
-    <meta name="theme-color" content="#1f2937">
-    <title>GTR IT - AI Agents & Workflow Automation for SMEs</title>
+    <meta name="description" content="GTR IT — Less Grind. More Growth. AI agents and workflow automation for SMEs. Transform your business with intelligent automation solutions.">
+    <meta name="theme-color" content="#202124">
+    <title>GTR IT — Less Grind. More Growth.</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -15,15 +17,15 @@
         }
 
         :root {
-            --color-primary: #0f766e;
-            --color-primary-light: #14b8a6;
-            --color-primary-dark: #0d5a52;
-            --color-secondary: #1e293b;
-            --color-accent: #f59e0b;
-            --color-accent-light: #fcd34d;
-            --color-background: #f9fafb;
-            --color-text-dark: #1f2937;
-            --color-text-light: #6b7280;
+            --color-primary: #4285F4;
+            --color-secondary: #EA4335;
+            --color-tertiary: #FBBC05;
+            --color-charcoal: #202124;
+            --color-slate: #5F6368;
+            --color-cloud: #F8F9FA;
+            --color-background: #ffffff;
+            --color-text-dark: #202124;
+            --color-text-light: #5F6368;
             --color-border: #e5e7eb;
             --color-white: #ffffff;
             
@@ -34,7 +36,7 @@
             --spacing-xl: 3rem;
             --spacing-2xl: 4rem;
             
-            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
             --font-mono: 'Monaco', 'Courier New', monospace;
             
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -57,27 +59,32 @@
 
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
+            font-weight: 600;
             line-height: 1.2;
             margin-bottom: var(--spacing-md);
+            color: var(--color-charcoal);
         }
 
         h1 {
             font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
         }
 
         h2 {
             font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 600;
         }
 
         h3 {
             font-size: clamp(1.5rem, 3.5vw, 1.875rem);
+            font-weight: 600;
         }
 
         p {
             margin-bottom: var(--spacing-md);
             font-size: 1rem;
             color: var(--color-text-light);
+            font-weight: 400;
         }
 
         a {
@@ -87,7 +94,7 @@
         }
 
         a:hover {
-            color: var(--color-primary-light);
+            color: #1967d2;
         }
 
         /* Container & Layout */
@@ -117,10 +124,17 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary-dark);
-            letter-spacing: -0.5px;
+            font-weight: 800;
+            color: var(--color-charcoal);
+            letter-spacing: -0.03em;
+            display: flex;
+            gap: 0;
         }
+
+        .logo .g { color: var(--color-primary); font-weight: 800; }
+        .logo .t { color: var(--color-secondary); font-weight: 800; }
+        .logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .logo .it { color: var(--color-charcoal); font-weight: 300; }
 
         .nav-links {
             display: none;
@@ -159,7 +173,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            background: var(--color-charcoal);
             color: var(--color-white);
             padding: var(--spacing-2xl) 0;
             text-align: center;
@@ -168,6 +182,7 @@
         .hero h1 {
             color: var(--color-white);
             margin-bottom: var(--spacing-lg);
+            font-weight: 800;
         }
 
         .hero p {
@@ -177,6 +192,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
         }
 
         .hero-cta {
@@ -202,13 +218,13 @@
         }
 
         .btn-primary {
-            background: var(--color-accent);
-            color: var(--color-text-dark);
+            background: var(--color-primary);
+            color: var(--color-white);
             box-shadow: var(--shadow-md);
         }
 
         .btn-primary:hover {
-            background: var(--color-accent-light);
+            background: #1967d2;
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
@@ -226,27 +242,29 @@
         .btn-outline {
             background: transparent;
             color: var(--color-white);
-            border: 2px solid var(--color-accent);
+            border: 2px solid var(--color-primary);
             padding: calc(var(--spacing-md) - 2px) calc(var(--spacing-xl) - 2px);
         }
 
         .btn-outline:hover {
-            background: var(--color-accent);
-            color: var(--color-text-dark);
+            background: var(--color-primary);
+            color: var(--color-white);
         }
 
         /* Section Styles */
         section {
             padding: var(--spacing-2xl) 0;
+            background: var(--color-white);
         }
 
         section:nth-child(even) {
-            background: var(--color-background);
+            background: var(--color-cloud);
         }
 
         section h2 {
             text-align: center;
             margin-bottom: var(--spacing-2xl);
+            color: var(--color-charcoal);
         }
 
         /* Problem Section */
@@ -262,16 +280,17 @@
             padding: var(--spacing-lg);
             border-radius: 8px;
             box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--color-accent);
+            border-left: 4px solid var(--color-secondary);
         }
 
         .problem-card h3 {
-            color: var(--color-text-dark);
+            color: var(--color-charcoal);
             margin-top: 0;
+            font-weight: 600;
         }
 
         .problem-card p {
-            color: var(--color-text-light);
+            color: var(--color-slate);
             margin-bottom: 0;
         }
 
@@ -289,7 +308,8 @@
         }
 
         .solution-text h3 {
-            color: var(--color-primary);
+            color: var(--color-charcoal);
+            font-weight: 600;
         }
 
         /* Features Grid */
@@ -314,12 +334,14 @@
         }
 
         .feature-card h3 {
-            color: var(--color-primary);
+            color: var(--color-charcoal);
             margin: var(--spacing-md) 0;
+            font-weight: 600;
         }
 
         .feature-card p {
             margin: 0;
+            color: var(--color-slate);
         }
 
         /* Why Us Section */
@@ -345,13 +367,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 1.5rem;
         }
 
         .why-us-text h3 {
             margin-top: 0;
-            color: var(--color-text-dark);
+            color: var(--color-charcoal);
+            font-weight: 600;
+        }
+
+        .why-us-text p {
+            color: var(--color-slate);
         }
 
         /* What We Do Section */
@@ -370,8 +397,13 @@
         }
 
         .service-card h3 {
-            color: var(--color-primary);
+            color: var(--color-charcoal);
             margin: var(--spacing-md) 0;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--color-slate);
         }
 
         .service-card ul {
@@ -381,7 +413,7 @@
 
         .service-card li {
             padding: var(--spacing-xs) 0;
-            color: var(--color-text-light);
+            color: var(--color-slate);
             padding-left: var(--spacing-lg);
             position: relative;
         }
@@ -390,7 +422,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--color-accent);
+            color: var(--color-primary);
             font-weight: bold;
         }
 
@@ -409,7 +441,7 @@
             gap: var(--spacing-lg);
             margin-bottom: var(--spacing-xl);
             padding: var(--spacing-xl);
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1967d2 100%);
             border-radius: 8px;
             text-align: center;
         }
@@ -421,18 +453,24 @@
         .case-study-stat .number {
             display: block;
             font-size: 2.5rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: var(--spacing-sm);
         }
 
         .case-study-stat .label {
             color: rgba(255, 255, 255, 0.9);
             font-size: 0.95rem;
+            font-weight: 400;
         }
 
         .case-study-body h3 {
-            color: var(--color-primary);
+            color: var(--color-charcoal);
             margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+            font-weight: 600;
+        }
+
+        .case-study-body p {
+            color: var(--color-slate);
         }
 
         /* Timeline */
@@ -456,12 +494,12 @@
         }
 
         .timeline-desc {
-            color: var(--color-text-light);
+            color: var(--color-slate);
         }
 
         /* CTA Section */
         .cta {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            background: var(--color-charcoal);
             color: var(--color-white);
             padding: var(--spacing-2xl) 0;
             text-align: center;
@@ -469,6 +507,7 @@
 
         .cta h2 {
             color: var(--color-white);
+            font-weight: 600;
         }
 
         .cta p {
@@ -478,6 +517,7 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 400;
         }
 
         .cta-buttons {
@@ -489,48 +529,73 @@
 
         /* Footer */
         footer {
-            background: var(--color-secondary);
+            background: var(--color-charcoal);
             color: var(--color-white);
-            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            padding: var(--spacing-xl) 0 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-content {
             text-align: center;
-            padding-bottom: var(--spacing-xl);
+            padding: var(--spacing-xl);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-content h3 {
-            color: var(--color-accent);
+            color: var(--color-primary);
             margin: 0 0 var(--spacing-md) 0;
             font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .footer-content p {
             margin: var(--spacing-sm) 0;
             color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
         }
 
         .footer-content a {
-            color: var(--color-accent);
+            color: var(--color-primary);
             transition: var(--transition);
         }
 
         .footer-content a:hover {
-            color: var(--color-accent-light);
+            color: rgba(66, 133, 244, 0.8);
         }
 
         .footer-bottom {
             text-align: center;
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
-            padding-top: var(--spacing-lg);
+            padding: var(---spacing-lg);
         }
 
         .footer-bottom p {
             margin: 0;
             color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+
+        /* Three-colour footer bar */
+        .footer-bar {
+            display: flex;
+            height: 8px;
+            margin-top: 0;
+        }
+
+        .footer-bar .bar-blue {
+            flex: 1;
+            background: var(--color-primary);
+        }
+
+        .footer-bar .bar-red {
+            flex: 1;
+            background: var(--color-secondary);
+        }
+
+        .footer-bar .bar-yellow {
+            flex: 1;
+            background: var(--color-tertiary);
         }
 
         /* Accessibility */
@@ -588,7 +653,7 @@
 
             .cta-buttons {
                 flex-direction: row;
-                justify-content: center;
+             " justify-content: center;
             }
 
             .timeline-item {
@@ -664,7 +729,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">GTR IT</div>
+                <div class="logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
                 <ul class="nav-links">
                     <li><a href="#problem">Problem</a></li>
                     <li><a href="#solution">Solution</a></li>
@@ -687,7 +752,7 @@
         <section class="hero">
             <div class="container">
                 <h1>Stop drowning in manual work. Start automating it.</h1>
-                <p>AI agents and workflow automation solve real problems. Faster. Cheaper. No tech degree required.</p>
+                <p>AI agents and workflow automation solve real problems. Faster. Cheaper. No tech degree required.<br><em style="font-weight: 600;">Less grind. More growth.</em></p>
                 <div class="hero-cta">
                     <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary">Book a discovery call</a>
                 </div>
@@ -853,6 +918,11 @@
             <div class="footer-bottom">
                 <p>Copyright GTR IT 2026. All rights reserved.</p>
             </div>
+        </div>
+        <div class="footer-bar">
+            <div class="bar-blue"></div>
+            <div class="bar-red"></div>
+            <div class="bar-yellow"></div>
         </div>
     </footer>
 

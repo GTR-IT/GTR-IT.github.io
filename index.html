@@ -40,7 +40,8 @@
             --spacing-2xl: 4rem;
             
             --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-            --font-mono: 'Monaco', 'Courier New', monospace;
+            --font-mono: 'Monaco', 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+            --color-primary-dark: #1967d2;
             
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -256,7 +257,6 @@
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
-            display: inline-block;
             min-height: 48px;
             display: inline-flex;
             align-items: center;
@@ -704,6 +704,8 @@
 
         .skip-to-main:focus {
             top: 0;
+            outline: 3px solid var(--color-primary);
+            padding: var(--spacing-sm) var(--spacing-lg);
         }
 
         /* Responsive Design */
@@ -826,7 +828,7 @@
                     <li><a href="#what-we-do">What We Do</a></li>
                     <li><a href="#case-study">Case Study</a></li>
                 </ul>
-                <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary nav-cta">Get Started</a>
+                <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary nav-cta" role="button">Get Started</a>
                 <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" type="button">
                     <span></span>
                     <span></span>
@@ -844,7 +846,7 @@
                 <div class="hero-tagline">Less grind. More growth.</div>
                 <p>AI agents and workflow automation solve real problems. Faster. Cheaper. No tech degree required.</p>
                 <div class="hero-cta">
-                    <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary">Book a discovery call</a>
+                    <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary" role="button">Book a discovery call</a>
                 </div>
             </div>
         </section>
@@ -920,7 +922,7 @@
             <div class="container">
                 <h2>Three ways we can help.</h2>
                 <div class="services-grid">
-                    <div class="service-card blue">
+                    <div class="service-card blue" aria-label="Process automation service">
                         <h3>Process automation.</h3>
                         <p>You have workflows that are repetitive and rule-based. We build agents that handle these end-to-end. Your team focuses on exceptions and relationships.</p>
                         <ul>
@@ -929,7 +931,7 @@
                             <li>System-to-system integration</li>
                         </ul>
                     </div>
-                    <div class="service-card red">
+                    <div class="service-card red" aria-label="Data integration service">
                         <h3>Data integration.</h3>
                         <p>Your data lives in different places. Pulling it together manually burns time. We build agents that pull data together, clean it, and make it available where your people need it.</p>
                         <ul>
@@ -938,7 +940,7 @@
                             <li>Real-time dashboards</li>
                         </ul>
                     </div>
-                    <div class="service-card yellow">
+                    <div class="service-card yellow" aria-label="Customer-facing automation service">
                         <h3>Customer-facing automation.</h3>
                         <p>Customers ask questions. You have the answers somewhere. We build agents that answer them automatically. Your support team handles the hard stuff. The agent handles the rest.</p>
                         <ul>
@@ -991,7 +993,7 @@
                 <h2>Ready to see what's possible?</h2>
                 <p>Book a free 20-minute discovery call. You'll leave with a clear picture of what you could automate and what it's worth to you. No pressure. No pitch. Just a conversation about your business.</p>
                 <div class="cta-buttons">
-                    <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary">Book a discovery call</a>
+                    <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary" role="button">Book a discovery call</a>
                 </div>
             </div>
         </section>
@@ -1007,7 +1009,7 @@
                 <p><a href="tel:+441234567890">+44 (0) 123 456 7890</a> or <a href="mailto:steve@gtr-it.co.uk">email</a></p>
             </div>
             <div class="footer-bottom">
-                <p>Copyright GTR IT 2026. All rights reserved. | <a href="faq.html">FAQ</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+                <p>Copyright GTR IT <time datetime="2026">2026</time>. All rights reserved. | <a href="faq.html">FAQ</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
             </div>
         </div>
     </footer>

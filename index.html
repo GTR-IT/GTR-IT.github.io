@@ -124,7 +124,7 @@
         }
 
         .logo {
-            font-size: 2.8rem;
+            font-size: 5.6rem;
             font-weight: 800;
             color: var(--color-charcoal);
             letter-spacing: -0.03em;
@@ -134,12 +134,22 @@
         }
 
         .footer-logo {
-            font-size: 2.2rem;
+            font-size: 4.4rem;
             font-weight: 800;
             letter-spacing: -0.03em;
             display: inline-flex;
             gap: 0;
             line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-tagline {
+            display: block;
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.02em;
+            margin-top: 0.25rem;
             margin-bottom: 1rem;
         }
 
@@ -311,14 +321,18 @@
         }
 
         .problem-card {
-            background: var(--color-white);
+            background: var(--color-cloud);
             padding: var(--spacing-lg);
             border-radius: 8px;
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid var(--color-secondary);
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-secondary);
             display: flex;
             flex-direction: column;
         }
+
+        .problem-card.blue { border-left-color: var(--color-primary); }
+        .problem-card.red  { border-left-color: var(--color-secondary); }
+        .problem-card.yellow { border-left-color: var(--color-tertiary); }
 
         .problem-card h3 {
             color: var(--color-charcoal);
@@ -430,14 +444,18 @@
         }
 
         .service-card {
-            background: var(--color-white);
+            background: var(--color-cloud);
             padding: var(--spacing-lg);
             border-radius: 8px;
-            box-shadow: var(--shadow-sm);
-            border-top: 3px solid var(--color-primary);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--color-primary);
             display: flex;
             flex-direction: column;
         }
+
+        .service-card.blue { border-top-color: var(--color-primary); }
+        .service-card.red  { border-top-color: var(--color-secondary); }
+        .service-card.yellow { border-top-color: var(--color-tertiary); }
 
         .service-card h3 {
             color: var(--color-charcoal);
@@ -781,15 +799,15 @@
             <div class="container">
                 <h2>The problem isn't complicated. It's everywhere.</h2>
                 <div class="problems-grid">
-                    <div class="problem-card">
+                    <div class="problem-card blue">
                         <h3>Manual admin is eating your margin</h3>
                         <p>Your team enters the same data twice. Processes that should take minutes take days. You're paying people to do work a computer should do.</p>
                     </div>
-                    <div class="problem-card">
+                    <div class="problem-card red">
                         <h3>You've got process. You haven't documented it.</h3>
                         <p>They're doing repetitive work instead of the work only they can do. Good staff leave because they're bored. You hire to replace them. The cycle repeats.</p>
                     </div>
-                    <div class="problem-card">
+                    <div class="problem-card yellow">
                         <h3>You can't scale what you can't delegate.</h3>
                         <p>Mistakes happen because people are tired. Work slips through the cracks. You don't have visibility into what's actually happening in your business.</p>
                     </div>
@@ -847,7 +865,7 @@
             <div class="container">
                 <h2>Three ways we can help.</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card blue">
                         <h3>Process automation.</h3>
                         <p>You have workflows that are repetitive and rule-based. We build agents that handle these end-to-end. Your team focuses on exceptions and relationships.</p>
                         <ul>
@@ -856,7 +874,7 @@
                             <li>System-to-system integration</li>
                         </ul>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card red">
                         <h3>Data integration.</h3>
                         <p>Your data lives in different places. Pulling it together manually burns time. We build agents that pull data together, clean it, and make it available where your people need it.</p>
                         <ul>
@@ -865,7 +883,7 @@
                             <li>Real-time dashboards</li>
                         </ul>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card yellow">
                         <h3>Customer-facing automation.</h3>
                         <p>Customers ask questions. You have the answers somewhere. We build agents that answer them automatically. Your support team handles the hard stuff. The agent handles the rest.</p>
                         <ul>
@@ -929,6 +947,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
+                <span class="footer-tagline">Less grind. More growth.</span>
                 <p>AI agents and workflow automation for small and medium businesses.</p>
                 <p><a href="tel:+441234567890">+44 (0) 123 456 7890</a> or <a href="mailto:steve@gtr-it.co.uk">email</a></p>
             </div>

@@ -123,7 +123,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 800;
             color: var(--color-charcoal);
             letter-spacing: -0.03em;
@@ -141,6 +141,7 @@
             list-style: none;
             gap: var(--spacing-lg);
             align-items: center;
+            padding: var(--spacing-xl) 0;
         }
 
         .nav-links a {
@@ -148,8 +149,17 @@
             font-size: 0.95rem;
         }
 
+        .nav-links.active {
+            display: flex !important;
+        }
+
         .nav-cta {
             display: none;
+        }
+
+        .nav-cta.btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
         }
 
         /* Mobile Menu Toggle */
@@ -186,13 +196,21 @@
         }
 
         .hero p {
-            color: rgba(255, 255, 255, 0.9);
+            color: #e0e0e0;
             font-size: 1.1rem;
             margin-bottom: var(--spacing-xl);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 400;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: var(--spacing-lg) 0;
+            letter-spacing: -0.02em;
         }
 
         .hero-cta {
@@ -567,7 +585,7 @@
             text-align: center;
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
-            padding: var(---spacing-lg);
+            padding: var(--spacing-lg);
         }
 
         .footer-bottom p {
@@ -653,7 +671,7 @@
 
             .cta-buttons {
                 flex-direction: row;
-             " justify-content: center;
+                justify-content: center;
             }
 
             .timeline-item {
@@ -719,6 +737,13 @@
             .timeline-desc {
                 color: #d1d5db;
             }
+
+            .problem-card h3,
+            .service-card h3,
+            .case-study-body h3,
+            .why-us-text h3 {
+                color: #f3f4f6;
+            }
         }
     </style>
 </head>
@@ -731,13 +756,8 @@
             <nav>
                 <div class="logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
                 <ul class="nav-links">
-                    <li><a href="#problem">Problem</a></li>
-                    <li><a href="#solution">Solution</a></li>
-                    <li><a href="#why-us">Why Us</a></li>
-                    <li><a href="#what-we-do">What We Do</a></li>
-                    <li><a href="#case-study">Case Study</a></li>
                 </ul>
-                <a href="mailto:steve@gtr-it.co.uk" class="btn btn-primary nav-cta">Get Started</a>
+                <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary nav-cta">Get Started</a>
                 <button class="menu-toggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
@@ -752,7 +772,8 @@
         <section class="hero">
             <div class="container">
                 <h1>Stop drowning in manual work. Start automating it.</h1>
-                <p>AI agents and workflow automation solve real problems. Faster. Cheaper. No tech degree required.<br><em style="font-weight: 600;">Less grind. More growth.</em></p>
+                <div class="hero-tagline">Less grind. More growth.</div>
+                <p>AI agents and workflow automation solve real problems. Faster. Cheaper. No tech degree required.</p>
                 <div class="hero-cta">
                     <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary">Book a discovery call</a>
                 </div>
@@ -765,15 +786,15 @@
                 <h2>The problem isn't complicated. It's everywhere.</h2>
                 <div class="problems-grid">
                     <div class="problem-card">
-                        <h3>You're spending hours on tasks that don't need a human.</h3>
+                        <h3>Manual admin is eating your margin</h3>
                         <p>Your team enters the same data twice. Processes that should take minutes take days. You're paying people to do work a computer should do.</p>
                     </div>
                     <div class="problem-card">
-                        <h3>Your people are exhausted.</h3>
+                        <h3>You've got process. You haven't documented it.</h3>
                         <p>They're doing repetitive work instead of the work only they can do. Good staff leave because they're bored. You hire to replace them. The cycle repeats.</p>
                     </div>
                     <div class="problem-card">
-                        <h3>You're losing money on inefficiency.</h3>
+                        <h3>You can't scale what you can't delegate.</h3>
                         <p>Mistakes happen because people are tired. Work slips through the cracks. You don't have visibility into what's actually happening in your business.</p>
                     </div>
                 </div>
@@ -798,7 +819,7 @@
         <!-- Why Us Section -->
         <section id="why-us">
             <div class="container">
-                <h2>Why work with GTR IT?</h2>
+                <h2>We understand your business. We simplify the rest.</h2>
                 <div class="why-us-list">
                     <div class="why-us-item">
                         <div class="why-us-icon">1</div>
@@ -868,28 +889,28 @@
                 <div class="case-study">
                     <div class="case-study-stats">
                         <div class="case-study-stat">
-                            <span class="number">20 hrs</span>
-                            <span class="label">/week saved</span>
+                            <span class="number">8–12 hrs</span>
+                            <span class="label">/week freed up</span>
                         </div>
                         <div class="case-study-stat">
-                            <span class="number">5 min</span>
-                            <span class="label">per quote (was 2 hrs)</span>
+                            <span class="number">Documented</span>
+                            <span class="label">processes & scale</span>
                         </div>
                         <div class="case-study-stat">
-                            <span class="number">Same-day</span>
-                            <span class="label">response (was 2-3 days)</span>
+                            <span class="number">Visible</span>
+                            <span class="label">cost & margin data</span>
                         </div>
                     </div>
 
                     <div class="case-study-body">
                         <h3>The Scenario</h3>
-                        <p>You run a service business. Customers request quotes by email. Right now someone manually reviews each request, checks availability, pulls together a quote, and sends it back. It takes 2 hours per quote. You get 10 a week. That's 20 hours of admin.</p>
+                        <p>A typical example: You run a service business. Most of your time goes into repeating the same admin tasks — scheduling, invoicing, chasing payments, managing customer data. You've got good systems in your head, but they're not written down. When you're busy, things fall through cracks.</p>
                         
                         <h3>What We Build</h3>
-                        <p>An agent watches your inbox. It extracts customer details. Checks your calendar. Pulls the right pricing. Sends a customised quote within minutes. When the customer replies, it answers common questions automatically and flags complex ones to your team.</p>
+                        <p>We'd sit down with you, understand what's actually slowing you down, then build automation around those specific bottlenecks. Not a generic off-the-shelf solution. Something shaped to how you actually work. Maybe it's a form that feeds directly into your invoicing. Maybe it's a dashboard that shows you which clients are overdue. Maybe it's both.</p>
 
                         <h3>The Result</h3>
-                        <p>2-hour manual job becomes 5 minutes of agent work. Your team spends their time closing deals, not processing them.</p>
+                        <p>In most cases, we free up 8–12 hours a week. That time goes back to you — either growing the business, or just breathing. You've got documented processes now, so scaling or handing off work becomes possible. And you can actually see what things cost you.</p>
                     </div>
                 </div>
             </div>
@@ -899,7 +920,7 @@
         <section class="cta">
             <div class="container">
                 <h2>Ready to see what's possible?</h2>
-                <p>The biggest barrier isn't technology. It's talking to someone who understands your business and can explain what's realistic for you. Book a free 20-minute discovery call with Steve. Come with a process that wastes your time. Leave with a clear picture of what you could automate and what it's worth to you. No pressure. No pitch. Just a conversation about your business.</p>
+                <p>Book a free 20-minute discovery call. You'll leave with a clear picture of what you could automate and what it's worth to you. No pressure. No pitch. Just a conversation about your business.</p>
                 <div class="cta-buttons">
                     <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary">Book a discovery call</a>
                 </div>
@@ -913,7 +934,7 @@
             <div class="footer-content">
                 <h3>GTR IT</h3>
                 <p>AI agents and workflow automation for small and medium businesses.</p>
-                <p><a href="mailto:steve@gtr-it.co.uk">steve@gtr-it.co.uk</a></p>
+                <p><a href="tel:+441234567890">+44 (0) 123 456 7890</a> or <a href="mailto:steve@gtr-it.co.uk">email</a></p>
             </div>
             <div class="footer-bottom">
                 <p>Copyright GTR IT 2026. All rights reserved.</p>
@@ -927,20 +948,20 @@
     </footer>
 
     <script>
-        // Simple mobile menu toggle
+        // Simple mobile menu toggle using class
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
 
         if (menuToggle) {
             menuToggle.addEventListener('click', () => {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                navLinks.classList.toggle('active');
             });
         }
 
         // Close menu when link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                if (navLinks) navLinks.style.display = 'none';
+                if (navLinks) navLinks.classList.remove('active');
             });
         });
 

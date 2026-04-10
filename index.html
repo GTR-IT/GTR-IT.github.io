@@ -123,13 +123,29 @@
         }
 
         .logo {
-            font-size: 2rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: var(--color-charcoal);
             letter-spacing: -0.03em;
             display: flex;
             gap: 0;
+            line-height: 1;
         }
+
+        .footer-logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            display: inline-flex;
+            gap: 0;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo .g { color: var(--color-primary); font-weight: 800; }
+        .footer-logo .t { color: var(--color-secondary); font-weight: 800; }
+        .footer-logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .footer-logo .it { color: #ffffff; font-weight: 300; }
 
         .logo .g { color: var(--color-primary); font-weight: 800; }
         .logo .t { color: var(--color-secondary); font-weight: 800; }
@@ -932,7 +948,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h3>GTR IT</h3>
+                <div class="footer-logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
                 <p>AI agents and workflow automation for small and medium businesses.</p>
                 <p><a href="tel:+441234567890">+44 (0) 123 456 7890</a> or <a href="mailto:steve@gtr-it.co.uk">email</a></p>
             </div>

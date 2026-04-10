@@ -767,6 +767,48 @@
 
         /* Dark mode support */
         /* Dark mode intentionally disabled - brand page always displays in light mode */
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            line-height: 48px;
+            text-align: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:focus {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        .back-to-top:hover {
+            background: #1967d2;
+        }
+
+        .back-to-top:active {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -994,6 +1036,37 @@
                 console.log(`Page load time: ${loadTime}ms`);
             });
         }
+
+        // Back to top button
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.classList.add('back-to-top');
+        backToTopBtn.innerHTML = '↑';
+        backToTopBtn.setAttribute('aria-label', 'Back to top');
+        backToTopBtn.setAttribute('title', 'Back to top');
+        document.body.appendChild(backToTopBtn);
+
+        // Show/hide button based on scroll position
+        const scrollToTop = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        const toggleBackToTop = () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        };
+
+        // Event listeners
+        window.addEventListener('scroll', toggleBackToTop);
+        backToTopBtn.addEventListener('click', scrollToTop);
+
+        // Remove event listeners on page unload
+        window.addEventListener('beforeunload', () => {
+            window.removeEventListener('scroll', toggleBackToTop);
+            backToTopBtn.removeEventListener('click', scrollToTop);
+        });
     </script>
 </body>
 </html>

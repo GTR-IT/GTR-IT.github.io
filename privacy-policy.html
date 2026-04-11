@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://gtr-it.co.uk/privacy-policy.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GTR IT — Privacy Policy. How we collect, store, and protect your data.">
+    <meta name="theme-color" content="#202124">
+    <title>Privacy Policy — GTR IT</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-accent: #4285F4;
+            --color-primary: #4285F4;
+            --color-secondary: #EA4335;
+            --color-tertiary: #FBBC05;
+            --color-charcoal: #202124;
+            --color-slate: #3C4043;
+            --color-cloud: #F8F9FA;
+            --color-background: #ffffff;
+            --color-text-dark: #202124;
+            --color-text-light: #3C4043;
+            --color-border: #e5e7eb;
+            --color-white: #ffffff;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; margin-bottom: var(--spacing-md); color: var(--color-charcoal); }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; }
+        h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-top: var(--spacing-xl); }
+        h3 { font-size: 1.15rem; margin-top: var(--spacing-lg); }
+        p { margin-bottom: var(--spacing-md); font-size: 1rem; color: var(--color-text-light); }
+        a { color: var(--color-primary); text-decoration: none; transition: var(--transition); }
+        a:hover { color: #1967d2; }
+        ul { margin: var(--spacing-sm) 0 var(--spacing-md) var(--spacing-lg); }
+        li { color: var(--color-slate); margin-bottom: var(--spacing-xs); }
+        strong { color: var(--color-charcoal); }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
+
+        /* Header */
+        header {
+            background: var(--color-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        nav { display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) 0; }
+
+        .logo { font-size: 4.2rem; font-weight: 800; color: var(--color-charcoal); letter-spacing: -0.03em; display: flex; gap: 0; line-height: 1; }
+        .logo .g { color: var(--color-primary); font-weight: 800; }
+        .logo .t { color: var(--color-secondary); font-weight: 800; }
+        .logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .logo .it { color: var(--color-charcoal); font-weight: 300; }
+
+        .nav-links { display: none; list-style: none; gap: var(--spacing-lg); align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links.active { display: flex !important; padding: var(--spacing-xl) 0; flex-direction: column; }
+
+        .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: var(--spacing-xs); }
+        .menu-toggle span { width: 24px; height: 2px; background: var(--color-text-dark); border-radius: 1px; transition: var(--transition); }
+
+        .btn { padding: var(--spacing-md) var(--spacing-xl); border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); text-decoration: none; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
+        .btn-primary { background: var(--color-primary); color: var(--color-white); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background: #1967d2; color: #ffffff !important; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        a.btn-primary, a.btn-primary:hover, a.btn-primary:visited { color: #ffffff !important; text-decoration: none; }
+
+        /* Page Hero */
+        .page-hero {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+        .page-hero h1 { color: var(--color-white); margin-bottom: var(--spacing-sm); }
+        .page-hero p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0; }
+
+        /* Policy Content */
+        .policy-section { padding: var(--spacing-2xl) 0; }
+
+        .policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .policy-content h2 {
+            color: var(--color-charcoal);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .policy-content h3 {
+            color: var(--color-primary);
+        }
+
+        /* Footer */
+        footer { background: var(--color-charcoal); color: var(--color-white); padding: var(--spacing-xl) 0 0; border-top: 1px solid rgba(255,255,255,0.1); }
+
+        .footer-logo { font-size: 3.3rem; font-weight: 800; letter-spacing: -0.03em; display: inline-flex; gap: 0; line-height: 1; margin-bottom: 0.5rem; }
+        .footer-logo .g { color: var(--color-primary); font-weight: 800; }
+        .footer-logo .t { color: var(--color-secondary); font-weight: 800; }
+        .footer-logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .footer-logo .it { color: #ffffff; font-weight: 300; }
+
+        .footer-tagline { display: block; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.7); letter-spacing: 0.02em; margin-top: 0.25rem; margin-bottom: 1rem; }
+
+        .footer-content { text-align: center; padding: var(--spacing-xl); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-content h3 { color: var(--color-primary); margin: 0 0 var(--spacing-md) 0; font-size: 1.2rem; border: none; padding: 0; margin-top: 0; }
+        .footer-content p { margin: var(--spacing-sm) 0; color: rgba(255,255,255,0.8); }
+        .footer-content a { color: var(--color-primary); }
+        .footer-content a:hover { color: rgba(66,133,244,0.8); }
+
+        .footer-bottom { text-align: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; padding: var(--spacing-lg); }
+        .footer-bottom p { margin: 0; color: rgba(255,255,255,0.9); }
+
+        .footer-bar { display: flex; height: 8px; }
+        .footer-bar .bar-blue { flex: 1; background: var(--color-primary); }
+        .footer-bar .bar-red { flex: 1; background: var(--color-secondary); }
+        .footer-bar .bar-yellow { flex: 1; background: var(--color-tertiary); }
+
+        /* Accessibility */
+        a:focus, button:focus { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+        .skip-to-main { position: absolute; top: -40px; left: 0; background: var(--color-accent); color: var(--color-text-dark); padding: var(--spacing-sm); z-index: 100; }
+        .skip-to-main:focus { top: 0; }
+
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .menu-toggle { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo" aria-label="GTR IT — home"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html#problem">Problem</a></li>
+                    <li><a href="index.html#solution">Solution</a></li>
+                    <li><a href="index.html#why-us">Why Us</a></li>
+                    <li><a href="index.html#what-we-do">What We Do</a></li>
+                    <li><a href="index.html#case-study">Case Study</a></li>
+                </ul>
+                <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary" role="button">Get Started</a>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" type="button">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Privacy Policy</h1>
+                <p>Last updated: April 2026</p>
+            </div>
+        </section>
+
+        <section class="policy-section">
+            <div class="container">
+                <div class="policy-content">
+                    <p>GTR IT respects your privacy. This policy explains what information we collect, why we collect it, how we look after it, and what rights you have.</p>
+
+                    <h2>Who we are</h2>
+                    <p>GTR IT is a UK-based IT consultancy offering AI agents and workflow automation to small and medium-sized businesses. We're run by Steve Peacock (<a href="mailto:steve@gtr-it.co.uk">steve@gtr-it.co.uk</a>).</p>
+                    <p>For privacy questions, contact us at <strong>steve@gtr-it.co.uk</strong>.</p>
+
+                    <h2>What data we collect and why</h2>
+
+                    <h3>When you contact us</h3>
+                    <p>If you email us or fill in a contact form on our website, we collect:</p>
+                    <ul>
+                        <li>Your name</li>
+                        <li>Your email address</li>
+                        <li>Your company name (if provided)</li>
+                        <li>Your message or enquiry</li>
+                    </ul>
+                    <p><strong>Why:</strong> To respond to your enquiry, discuss potential work, and follow up if needed.</p>
+
+                    <h3>When you become a client</h3>
+                    <p>During project work, we may collect:</p>
+                    <ul>
+                        <li>Business contact information (email, phone, address)</li>
+                        <li>Information about your systems, processes, and workflows (only what's needed for the project)</li>
+                        <li>Files, documents, or data you share with us to complete the work</li>
+                        <li>Payment information (invoices, billing address)</li>
+                    </ul>
+                    <p><strong>Why:</strong> To deliver the services you've asked for, manage the project, and handle invoicing and payments.</p>
+
+                    <h3>Website visitors</h3>
+                    <p>Our website does not currently use analytics, tracking cookies, or other monitoring tools. We don't collect data about your browsing activity or IP address.</p>
+
+                    <h2>How we store and protect your data</h2>
+                    <p>We keep your information secure:</p>
+                    <ul>
+                        <li>Data is stored on secure, password-protected systems</li>
+                        <li>Only Steve Peacock has access to your information</li>
+                        <li>We do not share your data with third parties, except where required by law</li>
+                        <li>All business files are stored locally or on secure, UK-based cloud services</li>
+                    </ul>
+                    <p>We take reasonable steps to protect your data from unauthorised access, but no system is completely secure. If we discover a data breach, we'll contact you without unreasonable delay.</p>
+
+                    <h2>How long we keep your data</h2>
+                    <p>We keep your information for as long as needed to:</p>
+                    <ul>
+                        <li><strong>Client communications and project files:</strong> 6 years after the project ends (for accounting and tax purposes)</li>
+                        <li><strong>General enquiries:</strong> 1 year, unless you ask us to delete it sooner</li>
+                        <li><strong>Invoices and financial records:</strong> 7 years (UK tax law requirement)</li>
+                    </ul>
+                    <p>After these periods, we delete or anonymise your data.</p>
+
+                    <h2>Your rights</h2>
+                    <p>Under UK GDPR, you have the right to:</p>
+                    <ul>
+                        <li><strong>Access:</strong> Ask what data we hold about you</li>
+                        <li><strong>Correction:</strong> Ask us to fix incorrect information</li>
+                        <li><strong>Deletion:</strong> Ask us to delete your data (subject to legal requirements)</li>
+                        <li><strong>Restrict processing:</strong> Ask us to limit how we use your data</li>
+                        <li><strong>Data portability:</strong> Ask for a copy of your data in a standard format</li>
+                        <li><strong>Withdraw consent:</strong> If you've consented to something, you can withdraw it at any time</li>
+                    </ul>
+                    <p>To exercise any of these rights, email <strong>steve@gtr-it.co.uk</strong> with "Data Subject Request" in the subject line. We'll respond within 30 days.</p>
+
+                    <h2>Third parties</h2>
+                    <p>We don't routinely share your data. However, we may share information when:</p>
+                    <ul>
+                        <li>Required by law or a court order</li>
+                        <li>You ask us to (for example, if you want us to work with another provider)</li>
+                        <li>It's necessary to complete your project (e.g., with a payment processor for invoicing)</li>
+                    </ul>
+                    <p>Any third parties we work with are bound by similar confidentiality and data protection commitments.</p>
+
+                    <h2>International transfers</h2>
+                    <p>GTR IT is UK-based and stores data in the UK. We don't routinely transfer data outside the UK or EU. If we need to, we'll use appropriate safeguards (like Standard Contractual Clauses) and tell you first.</p>
+
+                    <h2>Changes to this policy</h2>
+                    <p>We may update this policy occasionally. If we make significant changes, we'll tell you by email or by updating the date at the top of this page. Continued use of our services means you accept the updated policy.</p>
+
+                    <h2>Questions or complaints</h2>
+                    <p>If you have questions about this policy or how we handle your data, email <strong>steve@gtr-it.co.uk</strong>.</p>
+                    <p>If you're unhappy with how we've handled your data, you have the right to complain to the Information Commissioner's Office (ICO):</p>
+                    <ul>
+                        <li><strong>Website:</strong> <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a></li>
+                        <li><strong>Phone:</strong> 0303 123 1113</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo" role="img" aria-label="GTR IT logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
+                <span class="footer-tagline">Less grind. More growth.</span>
+                <p>AI agents and workflow automation for small and medium businesses.</p>
+                <p><a href="tel:+441234567890">+44 (0) 123 456 7890</a> or <a href="mailto:steve@gtr-it.co.uk">email</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright GTR IT <time datetime="2026">2026</time>. All rights reserved. | <a href="faq.html">FAQ</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+        <div class="footer-bar"><div class="bar-blue"></div><div class="bar-red"></div><div class="bar-yellow"></div></div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
+    </script>
+</body>
+</html>

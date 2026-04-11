@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://gtr-it.co.uk/faq.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GTR IT — Frequently asked questions about our AI agents and workflow automation services.">
+    <meta name="theme-color" content="#202124">
+    <title>FAQ — GTR IT</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-accent: #4285F4;
+            --color-primary: #4285F4;
+            --color-secondary: #EA4335;
+            --color-tertiary: #FBBC05;
+            --color-charcoal: #202124;
+            --color-slate: #3C4043;
+            --color-cloud: #F8F9FA;
+            --color-background: #ffffff;
+            --color-text-dark: #202124;
+            --color-text-light: #3C4043;
+            --color-border: #e5e7eb;
+            --color-white: #ffffff;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; margin-bottom: var(--spacing-md); color: var(--color-charcoal); }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        p { margin-bottom: var(--spacing-md); font-size: 1rem; color: var(--color-text-light); }
+        a { color: var(--color-primary); text-decoration: none; transition: var(--transition); }
+        a:hover { color: #1967d2; }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
+
+        /* Header */
+        header {
+            background: var(--color-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        nav { display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) 0; }
+
+        .logo { font-size: 4.2rem; font-weight: 800; color: var(--color-charcoal); letter-spacing: -0.03em; display: flex; gap: 0; line-height: 1; }
+        .logo .g { color: var(--color-primary); font-weight: 800; }
+        .logo .t { color: var(--color-secondary); font-weight: 800; }
+        .logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .logo .it { color: var(--color-charcoal); font-weight: 300; }
+
+        .nav-links { display: none; list-style: none; gap: var(--spacing-lg); align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links.active { display: flex !important; padding: var(--spacing-xl) 0; flex-direction: column; }
+
+        .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: var(--spacing-xs); }
+        .menu-toggle span { width: 24px; height: 2px; background: var(--color-text-dark); border-radius: 1px; transition: var(--transition); }
+
+        .btn { padding: var(--spacing-md) var(--spacing-xl); border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); text-decoration: none; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
+        .btn-primary { background: var(--color-primary); color: var(--color-white); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background: #1967d2; color: #ffffff !important; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        a.btn-primary, a.btn-primary:hover, a.btn-primary:visited { color: #ffffff !important; text-decoration: none; }
+
+        /* Page Hero */
+        .page-hero {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+        .page-hero h1 { color: var(--color-white); }
+        .page-hero p { color: #e0e0e0; font-size: 1.1rem; max-width: 600px; margin: 0 auto var(--spacing-lg); }
+
+        /* FAQ Section */
+        .faq-section { padding: var(--spacing-2xl) 0; }
+
+        .faq-grid { max-width: 800px; margin: 0 auto; display: grid; gap: var(--spacing-lg); }
+
+        .faq-item {
+            background: var(--color-cloud);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item h3 {
+            color: var(--color-charcoal);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .faq-item p { color: var(--color-slate); margin-bottom: 0; }
+
+        /* CTA */
+        .cta { background: var(--color-charcoal); color: var(--color-white); padding: var(--spacing-2xl) 0; text-align: center; }
+        .cta h2 { color: var(--color-white); }
+        .cta p { color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: var(--spacing-xl); max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Footer */
+        footer { background: var(--color-charcoal); color: var(--color-white); padding: var(--spacing-xl) 0 0; border-top: 1px solid rgba(255,255,255,0.1); }
+
+        .footer-logo { font-size: 3.3rem; font-weight: 800; letter-spacing: -0.03em; display: inline-flex; gap: 0; line-height: 1; margin-bottom: 0.5rem; }
+        .footer-logo .g { color: var(--color-primary); font-weight: 800; }
+        .footer-logo .t { color: var(--color-secondary); font-weight: 800; }
+        .footer-logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .footer-logo .it { color: #ffffff; font-weight: 300; }
+
+        .footer-tagline { display: block; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.7); letter-spacing: 0.02em; margin-top: 0.25rem; margin-bottom: 1rem; }
+
+        .footer-content { text-align: center; padding: var(--spacing-xl); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-content h3 { color: var(--color-primary); margin: 0 0 var(--spacing-md) 0; font-size: 1.2rem; }
+        .footer-content p { margin: var(--spacing-sm) 0; color: rgba(255,255,255,0.8); }
+        .footer-content a { color: var(--color-primary); }
+        .footer-content a:hover { color: rgba(66,133,244,0.8); }
+
+        .footer-bottom { text-align: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; padding: var(--spacing-lg); }
+        .footer-bottom p { margin: 0; color: rgba(255,255,255,0.9); }
+
+        .footer-bar { display: flex; height: 8px; }
+        .footer-bar .bar-blue { flex: 1; background: var(--color-primary); }
+        .footer-bar .bar-red { flex: 1; background: var(--color-secondary); }
+        .footer-bar .bar-yellow { flex: 1; background: var(--color-tertiary); }
+
+        /* Accessibility */
+        a:focus, button:focus { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+        .skip-to-main { position: absolute; top: -40px; left: 0; background: var(--color-accent); color: var(--color-text-dark); padding: var(--spacing-sm); z-index: 100; }
+        .skip-to-main:focus { top: 0; }
+
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .menu-toggle { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo" aria-label="GTR IT — home"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html#problem">Problem</a></li>
+                    <li><a href="index.html#solution">Solution</a></li>
+                    <li><a href="index.html#why-us">Why Us</a></li>
+                    <li><a href="index.html#what-we-do">What We Do</a></li>
+                    <li><a href="index.html#case-study">Case Study</a></li>
+                </ul>
+                <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary" role="button">Get Started</a>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" type="button">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Frequently asked questions</h1>
+                <p>Everything you need to know before booking a call. If something's missing, just email us.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>What exactly do you automate? And will it actually apply to us?</h3>
+                        <p>We automate the repetitive, manual tasks that eat up your team's day — think data entry, spreadsheet updates, report generation, invoice processing, and email workflows. If your team spends time on tasks that follow the same pattern over and over, we can likely build something to handle it. The beauty is, what we build is custom to you, not a generic tool you have to force-fit.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How much is this going to cost?</h3>
+                        <p>There's no one-size-fits-all price tag, because every business is different. What we focus on is value: if a workflow costs you £10k a year in salaries, and we can automate it for £3k upfront, that's a clear win. We'll talk through your specific situation, scope the work honestly, and show you the ROI before we commit to anything. No surprises, no hidden costs.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How long does it actually take to build something?</h3>
+                        <p>A simple integration or data pipeline might take 2–4 weeks; something more complex could be 8–12 weeks. We'll give you a realistic timeline upfront and break it into milestones so you can see progress. Plus, we iterate with you along the way — if something isn't quite right, we fix it before it goes live, not after.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Will this work with the systems we already use?</h3>
+                        <p>Almost certainly, yes. We integrate with everything from Salesforce to QuickBooks, Slack to Excel, APIs to old-school databases. If your system has a way to send or receive data, we can plug into it. If we hit something unusual, we'll figure out a workaround together rather than telling you to rip and replace.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What if we're not totally sure what to automate?</h3>
+                        <p>That's completely normal — you're not alone. We start with a discovery conversation to map out your workflows, identify the real time-sinks, and spot quick wins. Sometimes the best automation isn't obvious until we dig in. Consider the first chat a free diagnosis: no obligation, and you'll leave with a clear picture of what's possible.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Are we small enough for you to work with?</h3>
+                        <p>Size doesn't matter to us. Small teams often benefit most from automation because every hour your people save goes straight to growth. Whether you're three people or three hundred, if the work's repetitive enough to automate, it's worth doing. In fact, we often find that smaller teams are faster to work with — less bureaucracy, quicker decisions.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What about data security and compliance?</h3>
+                        <p>Data security isn't an add-on — it's built into everything we do. We handle SOC 2, GDPR, data encryption, and audit trails as standard. If you have specific compliance needs (healthcare, finance, etc.), we'll design the system around those requirements from day one. You should always know exactly where your data lives and who has access to it.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What happens after you build it? Are we on our own?</h3>
+                        <p>Not a chance. We provide post-launch support so you're not fumbling around if something breaks or needs tweaking. We also document everything clearly so your team can understand what's running under the hood. And if you spot a bottleneck down the line, we're there to refine it — automation isn't a one-time thing; it evolves with your business.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do we actually get started?</h3>
+                        <p>Book a quick discovery call with us — no forms, no sales pitch, just a conversation about what's slowing you down. We'll listen, ask smart questions, and sketch out what's possible. If it makes sense to move forward, we'll outline a plan and timeline. If it doesn't fit right now, we'll tell you that too.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Can you really deliver on "less grind, more growth"?</h3>
+                        <p>That's the promise, and it's why we do this. When your team stops wrestling with spreadsheets and manual processes, they can focus on the work that actually moves the needle — selling, creating, strategising. We've seen teams go from drowning in admin to having time for real business growth. That's the whole point.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Still got questions?</h2>
+                <p>Book a free 20-minute discovery call. No pitch, no pressure — just an honest conversation about your business and what's possible.</p>
+                <a href="mailto:steve@gtr-it.co.uk?subject=Discovery Call Request" class="btn btn-primary" role="button">Book a discovery call</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo" role="img" aria-label="GTR IT logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
+                <span class="footer-tagline">Less grind. More growth.</span>
+                <p>AI agents and workflow automation for small and medium businesses.</p>
+                <p><a href="tel:+441234567890">+44 (0) 123 456 7890</a> or <a href="mailto:steve@gtr-it.co.uk">email</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright GTR IT <time datetime="2026">2026</time>. All rights reserved. | <a href="faq.html">FAQ</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+        <div class="footer-bar"><div class="bar-blue"></div><div class="bar-red"></div><div class="bar-yellow"></div></div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
+    </script>
+</body>
+</html>

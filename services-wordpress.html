@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://gtr-it.co.uk/services-wordpress.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Stop overpaying for your WordPress site. GTR IT migrates your existing WordPress website to your own hosting account - same site, massive savings.">
+    <meta name="theme-color" content="#202124">
+    <title>WordPress Hosting Liberation — GTR IT</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --color-accent: #4285F4;
+            --color-primary: #4285F4;
+            --color-secondary: #EA4335;
+            --color-tertiary: #FBBC05;
+            --color-charcoal: #202124;
+            --color-slate: #3C4043;
+            --color-cloud: #F8F9FA;
+            --color-background: #ffffff;
+            --color-text-dark: #202124;
+            --color-text-light: #3C4043;
+            --color-border: #e5e7eb;
+            --color-white: #ffffff;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+            --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease-in-out;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text-dark);
+            background-color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 { font-weight: 600; line-height: 1.2; margin-bottom: var(--spacing-md); color: var(--color-charcoal); }
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; }
+        h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        h3 { font-size: 1.15rem; font-weight: 600; }
+        p { margin-bottom: var(--spacing-md); font-size: 1rem; color: var(--color-text-light); }
+        a { color: var(--color-primary); text-decoration: none; transition: var(--transition); }
+        a:hover { color: #1967d2; }
+        strong { color: var(--color-charcoal); }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
+
+        /* Header */
+        header {
+            background: var(--color-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        nav { display: flex; align-items: center; justify-content: space-between; padding: var(--spacing-md) 0; }
+
+        .logo { font-size: 4.2rem; font-weight: 800; color: var(--color-charcoal); letter-spacing: -0.03em; display: flex; gap: 0; line-height: 1; }
+        .logo .g { color: var(--color-primary); font-weight: 800; }
+        .logo .t { color: var(--color-secondary); font-weight: 800; }
+        .logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .logo .it { color: var(--color-charcoal); font-weight: 300; }
+
+        .nav-links { display: none; list-style: none; gap: var(--spacing-lg); align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; }
+        .nav-links a.active { color: var(--color-primary); font-weight: 600; }
+        .nav-links.active { display: flex !important; padding: var(--spacing-xl) 0; flex-direction: column; }
+
+        .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: var(--spacing-xs); }
+        .menu-toggle span { width: 24px; height: 2px; background: var(--color-text-dark); border-radius: 1px; transition: var(--transition); }
+
+        .btn { padding: var(--spacing-md) var(--spacing-xl); border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); text-decoration: none; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
+        .btn-primary { background: var(--color-primary); color: var(--color-white); box-shadow: var(--shadow-md); }
+        .btn-primary:hover { background: #1967d2; color: #ffffff !important; transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        a.btn-primary, a.btn-primary:hover, a.btn-primary:visited { color: #ffffff !important; text-decoration: none; }
+
+        /* Page Hero */
+        .page-hero {
+            background: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+        .page-hero h1 { color: var(--color-white); margin-bottom: var(--spacing-sm); }
+        .page-hero p { color: #e0e0e0; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .page-hero .back-link { display: inline-block; margin-top: var(--spacing-lg); color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+        .page-hero .back-link:hover { color: var(--color-primary); }
+
+        /* Content Sections */
+        section { padding: var(--spacing-2xl) 0; }
+        section:nth-child(even) { background: var(--color-cloud); }
+
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Savings Highlight */
+        .savings-highlight {
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1967d2 100%);
+            color: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: 8px;
+            text-align: center;
+            margin: var(--spacing-xl) 0;
+        }
+
+        .savings-highlight .number {
+            display: block;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .savings-highlight .label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Comparison */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .comparison-card {
+            padding: var(--spacing-lg);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .comparison-card.before {
+            background: #E2E5E9;
+            border: 2px solid var(--color-border);
+        }
+
+        .comparison-card.after {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .comparison-card .price {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .comparison-card.before .price { color: var(--color-secondary); }
+        .comparison-card.after .price { color: var(--color-white); }
+
+        .comparison-card .period {
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .comparison-card.before .period { color: var(--color-slate); }
+        .comparison-card.after .period { color: rgba(255,255,255,0.9); }
+
+        .comparison-card .desc {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-card.before .desc { color: var(--color-secondary); }
+        .comparison-card.after .desc { color: var(--color-tertiary); }
+
+        /* Steps */
+        .steps-list {
+            display: grid;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .step-item {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .step-text h3 {
+            margin-top: 0;
+            color: var(--color-charcoal);
+        }
+
+        .step-text p {
+            color: var(--color-slate);
+        }
+
+        /* FAQ Section */
+        .faq-grid { max-width: 800px; margin: 0 auto; display: grid; gap: var(--spacing-lg); }
+
+        .faq-item {
+            background: var(--color-white);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            border-left: 4px solid var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item h3 {
+            color: var(--color-charcoal);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .faq-item p { color: var(--color-slate); margin-bottom: 0; }
+
+        /* CTA */
+        .cta { background: var(--color-charcoal); color: var(--color-white); padding: var(--spacing-2xl) 0; text-align: center; }
+        .cta h2 { color: var(--color-white); }
+        .cta p { color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: var(--spacing-xl); max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Footer */
+        footer { background: var(--color-charcoal); color: var(--color-white); padding: var(--spacing-xl) 0 0; border-top: 1px solid rgba(255,255,255,0.1); }
+
+        .footer-logo { font-size: 3.3rem; font-weight: 800; letter-spacing: -0.03em; display: inline-flex; gap: 0; line-height: 1; margin-bottom: 0.5rem; }
+        .footer-logo .g { color: var(--color-primary); font-weight: 800; }
+        .footer-logo .t { color: var(--color-secondary); font-weight: 800; }
+        .footer-logo .r { color: var(--color-tertiary); font-weight: 800; }
+        .footer-logo .it { color: #ffffff; font-weight: 300; }
+
+        .footer-tagline { display: block; font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.7); letter-spacing: 0.02em; margin-top: 0.25rem; margin-bottom: 1rem; }
+
+        .footer-content { text-align: center; padding: var(--spacing-xl); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-content h3 { color: var(--color-primary); margin: 0 0 var(--spacing-md) 0; font-size: 1.2rem; }
+        .footer-content p { margin: var(--spacing-sm) 0; color: rgba(255,255,255,0.8); }
+        .footer-content a { color: var(--color-primary); }
+        .footer-content a:hover { color: rgba(66,133,244,0.8); }
+
+        .footer-bottom { text-align: center; color: rgba(255,255,255,0.6); font-size: 0.9rem; padding: var(--spacing-lg); }
+        .footer-bottom p { margin: 0; color: rgba(255,255,255,0.9); }
+
+        .footer-bar { display: flex; height: 8px; }
+        .footer-bar .bar-blue { flex: 1; background: var(--color-primary); }
+        .footer-bar .bar-red { flex: 1; background: var(--color-secondary); }
+        .footer-bar .bar-yellow { flex: 1; background: var(--color-tertiary); }
+
+        /* Accessibility */
+        a:focus, button:focus { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+        .skip-to-main { position: absolute; top: -40px; left: 0; background: var(--color-accent); color: var(--color-text-dark); padding: var(--spacing-sm); z-index: 100; }
+        .skip-to-main:focus { top: 0; }
+
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .menu-toggle { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-to-main">Skip to main content</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo" aria-label="GTR IT - home"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></a>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="privacy-policy.html">Privacy</a></li>
+                </ul>
+                <a href="mailto:steve@gtr-it.co.uk?subject=WordPress Hosting Enquiry" class="btn btn-primary" role="button">Get Started</a>
+                <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" type="button">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Stop overpaying for your WordPress site</h1>
+                <p>Many small businesses are trapped in expensive agency hosting contracts. We help you break free and take control.</p>
+                <a href="services.html" class="back-link">&larr; Back to Services</a>
+            </div>
+        </section>
+
+        <!-- The Problem -->
+        <section>
+            <div class="container">
+                <div class="content-section">
+                    <h2>The problem: you're paying too much</h2>
+                    <p>If your business uses WordPress, there's a good chance you're paying a web agency £50 to £150 per month (or more) just to host and maintain your site. That's £600 to £1,800 a year for something that could cost a fraction of the price.</p>
+                    <p>It's not that agencies are doing anything wrong. They bundle hosting, updates, and support into a monthly fee, and for many businesses that felt like the simplest option when the site was first set up. But over time, the costs stack up while the actual work involved rarely justifies the price tag.</p>
+                    <p>The trouble is, most business owners don't realise there's an alternative. They assume that leaving their agency means losing their website, or that managing hosting themselves is too technical. So they keep paying, year after year, for something that costs a fraction of what they're being charged.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution -->
+        <section>
+            <div class="container">
+                <div class="content-section">
+                    <h2>The solution: take back control</h2>
+                    <p>We migrate your existing WordPress site to a hosting account that <strong>you own</strong>. Not a reseller account. Not an agency middleman. <strong>Your own hosting, in your name, under your control.</strong></p>
+                    <p>The site stays exactly the same. Same design, same content, same functionality. It just lives somewhere far less expensive, and you hold the keys.</p>
+
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <h3>We assess your current setup</h3>
+                                <p>We take a look at your existing site, hosting, and any plugins or themes you rely on. No commitment required at this stage.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <h3>We set up your own hosting account</h3>
+                                <p>We help you choose a hosting package that fits your needs and register it in your name. You own it from day one.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <h3>We migrate everything across</h3>
+                                <p>A complete copy of your WordPress site, moved to your new hosting. Files, database, plugins, themes: all of it.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-number">4</div>
+                            <div class="step-text">
+                                <h3>We test, then switch over</h3>
+                                <p>Everything is tested thoroughly before your domain points to the new hosting. Your visitors won't notice a thing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study -->
+        <section>
+            <div class="container">
+                <div class="content-section">
+                    <h2>Real savings: a recent example</h2>
+                    <p>A recent client was paying a web agency <strong>£100 per month</strong> to host and maintain their WordPress site. That's £1,200 a year.</p>
+
+                    <div class="comparison-grid">
+                        <div class="comparison-card before">
+                            <span class="desc">Before</span>
+                            <span class="price">£100</span>
+                            <span class="period">/month</span>
+                            <span class="desc">Agency hosting</span>
+                        </div>
+                        <div class="comparison-card after">
+                            <span class="desc">After</span>
+                            <span class="price">£30</span>
+                            <span class="period">/year</span>
+                            <span class="desc">Own hosting</span>
+                        </div>
+                    </div>
+
+                    <div class="savings-highlight">
+                        <span class="number">&pound;1,170</span>
+                        <span class="label">saved every year for the exact same website</span>
+                    </div>
+
+                    <p>We migrated their entire site to their own hosting account. First year cost: <strong>£30 for the entire year</strong>. The site looks and works exactly as it did before. Same pages, same contact forms, same everything. The only difference is the bill.</p>
+                    <p>That's a saving of over £1,100 per year. Every year. For a change that took less than a day.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: var(--spacing-xl);">Common questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Will my website look the same?</h3>
+                        <p>Yes. We migrate a complete copy of your existing WordPress site. Same theme, same content, same layout. Your visitors will not notice any difference.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What about updates and maintenance?</h3>
+                        <p>WordPress handles most core and plugin updates automatically. If you'd prefer a safety net, we can set up a maintenance plan to handle updates, backups, and security checks on your behalf.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Will I lose any functionality?</h3>
+                        <p>No. The entire site migrates as-is: plugins, themes, custom code, forms, e-commerce features. Everything that works now will work after migration.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How long does migration take?</h3>
+                        <p>Typically same day. Most straightforward WordPress sites are migrated and tested within a few hours. More complex setups may take a bit longer, and we'll always let you know upfront.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What if something goes wrong?</h3>
+                        <p>We test everything thoroughly before switching your domain over. Your existing site stays live throughout the process. If anything doesn't look right, we fix it before going live, not after.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to stop overpaying?</h2>
+                <p>Get in touch for a free, no-obligation assessment of your current hosting costs. We'll show you exactly what you could save.</p>
+                <a href="mailto:steve@gtr-it.co.uk?subject=WordPress Hosting Enquiry" class="btn btn-primary" role="button">Email steve@gtr-it.co.uk</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo" role="img" aria-label="GTR IT logo"><span class="g">G</span><span class="t">T</span><span class="r">R</span><span class="it"> IT</span></div>
+                <span class="footer-tagline">Less grind. More growth.</span>
+                <p>AI agents and workflow automation for small and medium businesses.</p>
+                <p><a href="tel:+441234567890">+44 (0) 123 456 7890</a> or <a href="mailto:steve@gtr-it.co.uk">email</a></p>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright GTR IT <time datetime="2026">2026</time>. All rights reserved. | <a href="services.html">Services</a> | <a href="faq.html">FAQ</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+        <div class="footer-bar"><div class="bar-blue"></div><div class="bar-red"></div><div class="bar-yellow"></div></div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => navLinks.classList.remove('active'));
+        });
+    </script>
+</body>
+</html>
